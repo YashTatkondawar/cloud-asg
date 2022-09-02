@@ -1,24 +1,34 @@
+import sys
 import matplotlib.pyplot as pl
 
-# x axis values
-number_of_records = [1000, 100000, 10000000]
-# y axis values
-generation_time = [5.5, 700, 41400]
-sort_time = [0.063, 0.682, 6.5]
+USAGE="Usage: python3 plot.py"
 
-# plotting generation line points 
-pl.plot(number_of_records, generation_time, label="generation line")
-# plotting sort line 2 points 
-pl.plot(number_of_records, sort_time, label="sort line")
+def main(args):
+    print(USAGE)
 
-# Name of axis
-pl.xlabel('Number of records')
-pl.ylabel('Time in seconds')
+    # x axis values
+    number_of_records = [1000, 100000, 10000000]
+    # y axis values
+    generation_time = [5.5, 700, 41400]
+    sort_time = [0.063, 0.682, 6.5]
 
-# Name of the graph
-pl.title('Number of records vs. time graph')
+    # plotting generation line points
+    pl.plot(number_of_records, generation_time, label="generation line")
+    # plotting sort line 2 points
+    pl.plot(number_of_records, sort_time, label="sort line")
 
-pl.legend()
+    # Name of axis
+    pl.xlabel('Number of records')
+    pl.ylabel('Time in seconds')
 
-# Display the generated graph
-pl.show()
+    # Name of the graph
+    pl.title('Number of records vs. time graph')
+
+    pl.legend()
+
+    # Display the generated graph
+    pl.show()
+
+
+if __name__ == "__main__":
+    main(sys.argv)

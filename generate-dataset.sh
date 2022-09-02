@@ -1,5 +1,9 @@
 #!/bin/bash
 
+USAGE="Usage: ./generate-dataset.sh <filename> <num_records>"
+
+echo $USAGE
+
 # Input from user
 OUTPUT_FILE_NAME=$1
 NUM_RECORDS=$2
@@ -22,6 +26,3 @@ generate_data() {
     RECORD_COUNT=$(($RECORD_COUNT + 1))
   done
 }
-
-setup
-generate_data
